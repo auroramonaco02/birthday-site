@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Нуршерик</title>
+  <title>Нуршерикке — Туулган күн!</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       height: 100vh;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       color: #fff;
       overflow: hidden;
       display: flex;
@@ -27,46 +27,41 @@
     }
 
     h1 {
-      font-size: 4rem;
-      margin: 0;
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px #ff6b6b;
+      font-size: 3.5rem;
+      margin: 0 0 20px;
+      text-shadow: 0 0 20px #fff, 0 0 40px #ff6b6b;
       animation: glow 2s ease-in-out infinite alternate;
     }
 
     p {
-      font-size: 1.6rem;
-      line-height: 1.6;
-      margin: 20px 0;
+      font-size: 1.5rem;
+      margin: 15px 0;
       text-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
     .cake-img {
       width: 220px;
-      margin: 30px auto;
       border-radius: 20px;
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+      box-shadow: 0 0 30px rgba(255,215,0,0.8);
       animation: float 6s ease-in-out infinite;
+      margin: 20px auto;
+      display: block;
     }
 
     @keyframes glow {
       from { text-shadow: 0 0 10px #fff, 0 0 20px #ff6b6b; }
-      to   { text-shadow: 0 0 30px #fff, 0 0 60px #ff6b6b, 0 0 90px #ff6b6b; }
+      to   { text-shadow: 0 0 30px #fff, 0 0 60px #ff6b6b; }
     }
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-20px); }
+      50%      { transform: translateY(-15px); }
     }
 
-    canvas {
-      position: fixed;
-      top: 0; left: 0;
-      pointer-events: none;
-      z-index: 5;
-    }
+    canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 5; }
 
     @media (max-width: 768px) {
-      h1 { font-size: 3rem; }
+      h1 { font-size: 2.8rem; }
       p  { font-size: 1.3rem; }
       .cake-img { width: 180px; }
     }
@@ -79,23 +74,20 @@
   <div class="container">
     <h1>Туулган күнүң менен, Нуршерик досум! 🎂🔥</h1>
     
-    <img src="https://Wh.jpeg" 
-         alt="Торт" class="cake-img" 
-         
+    <!-- Сүрөттү бул жерге кой (өзүң жүктөгөн файлдын атын жаз) -->
+    <img src="Wh.jpeg" 
+         alt="Торт жана майрам" 
+         class="cake-img"
+         onerror="this.src='https://thumbs.dreamstime.com/b/colorful-celebration-birthday-cake-candles-sparklers-against-white-background-327912369.jpg';">
 
-    <p>Сен менин эң жакын, эң күчтүү, эң күлкүлүү досумсуң! Бүгүн сенин күнүң — дүйнөдөгү эң сонун күн! 🌟</p>
+    <p>Сен менин эң жакын жана күлкүлүү досумсуң! Бүгүн сенин күнүң — сонун күн! 🌟</p>
     
-    <p>Чын жүрөктөн каалайм: өмүрүң узун болсун, ден соолугуң темирдей чың болсун, акчаң мол болсун, ийгиликтериң асман тирегендей бийик болсун! 💪💰</p>
+    <p>Өмүрүң узун, ден соолугуң чың, акчаң мол, ийгиликтериң бийик болсун! 💪❤️</p>
     
-    <p>Ар бир тилегиң орундалсын, жамандыктар алыс жүрсүн, жакшы адамдар айланаңда көп болсун. Сендей жакшы доско жакшылык гана келсин! ❤️</p>
-    
-    <p>Сен үчүн ар дайым бармын — качан кыйын болсо, чакыр, бирге күлөбүз, бирге алдыга жылып жүрөбүз! 🎉✨</p>
-    
-    <p><strong>Бактылуу бол, досум! Туулган күнүң куттуу болсун! 🥳🎈</strong></p>
+    <p>Ар дайым күлүп жүр, бардык тилектериң орундалсын! 🥳🎈</p>
   </div>
 
   <script>
-    // Конфетти анимациясы (JS Canvas)
     const canvas = document.getElementById('confetti');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
@@ -107,7 +99,7 @@
     });
 
     const confetti = [];
-    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ff8000'];
+    const colors = ['#ff0000','#00ff00','#0000ff','#ffff00','#ff00ff','#00ffff','#ff8000'];
 
     class ConfettiPiece {
       constructor() {
@@ -119,7 +111,6 @@
         this.rotationSpeed = Math.random() * 10 - 5;
         this.color = colors[Math.floor(Math.random() * colors.length)];
       }
-
       update() {
         this.y += this.speed;
         this.rotation += this.rotationSpeed;
@@ -128,30 +119,23 @@
           this.x = Math.random() * canvas.width;
         }
       }
-
       draw() {
         ctx.save();
         ctx.translate(this.x, this.y);
         ctx.rotate(this.rotation * Math.PI / 180);
         ctx.fillStyle = this.color;
-        ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+        ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
         ctx.restore();
       }
     }
 
-    for (let i = 0; i < 150; i++) {
-      confetti.push(new ConfettiPiece());
-    }
+    for (let i = 0; i < 120; i++) confetti.push(new ConfettiPiece());
 
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      confetti.forEach(piece => {
-        piece.update();
-        piece.draw();
-      });
+      confetti.forEach(p => { p.update(); p.draw(); });
       requestAnimationFrame(animate);
     }
-
     animate();
   </script>
 </body>
