@@ -9,7 +9,7 @@
       margin: 0;
       padding: 0;
       height: 100vh;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       color: #fff;
       overflow: hidden;
@@ -27,22 +27,23 @@
     }
 
     h1 {
-      font-size: 3.5rem;
+      font-size: 3.2rem;
       margin: 0 0 20px;
       text-shadow: 0 0 20px #fff, 0 0 40px #ff6b6b;
       animation: glow 2s ease-in-out infinite alternate;
     }
 
     p {
-      font-size: 1.5rem;
-      margin: 15px 0;
-      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+      font-size: 1.4rem;
+      margin: 12px 0;
+      text-shadow: 0 0 8px rgba(0,0,0,0.5);
     }
 
     .cake-img {
-      width: 220px;
+      width: 240px;
+      max-width: 90%;
       border-radius: 20px;
-      box-shadow: 0 0 30px rgba(255,215,0,0.8);
+      box-shadow: 0 0 30px rgba(255,215,0,0.7);
       animation: float 6s ease-in-out infinite;
       margin: 20px auto;
       display: block;
@@ -61,9 +62,9 @@
     canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 5; }
 
     @media (max-width: 768px) {
-      h1 { font-size: 2.8rem; }
-      p  { font-size: 1.3rem; }
-      .cake-img { width: 180px; }
+      h1 { font-size: 2.5rem; }
+      p  { font-size: 1.2rem; }
+      .cake-img { width: 200px; }
     }
   </style>
 </head>
@@ -74,17 +75,17 @@
   <div class="container">
     <h1>Туулган күнүң менен, Нуршерик досум! 🎂🔥</h1>
     
-    <!-- Сүрөттү бул жерге кой (өзүң жүктөгөн файлдын атын жаз) -->
-    <img src="Wh.jpeg" 
-         alt="Торт жана майрам" 
+    <!-- СЕНДИН СҮРӨТҮҢДҮ БУЛ ЖЕРГЕ КОЙ (аты туура жазылсын!) -->
+    <img src="Wh.jpeg"  <!-- ← Эгер папкада болсо: "images/Wh.jpeg" деп өзгөрт -->
+         alt="Туулган күнүңдө сонун сүрөт" 
          class="cake-img"
-         onerror="this.src='https://thumbs.dreamstime.com/b/colorful-celebration-birthday-cake-candles-sparklers-against-white-background-327912369.jpg';">
+         onerror="this.src='https://thumbs.dreamstime.com/b/festive-birthday-cake-candles-colorful-confetti-celebration-delectable-adorned-four-lit-surrounded-vibrant-352062685.jpg';">
 
     <p>Сен менин эң жакын жана күлкүлүү досумсуң! Бүгүн сенин күнүң — сонун күн! 🌟</p>
     
     <p>Өмүрүң узун, ден соолугуң чың, акчаң мол, ийгиликтериң бийик болсун! 💪❤️</p>
     
-    <p>Ар дайым күлүп жүр, бардык тилектериң орундалсын! 🥳🎈</p>
+    <p>Ар дайым күлүп жүр, тилектериң орундалсын! 🥳🎈</p>
   </div>
 
   <script>
